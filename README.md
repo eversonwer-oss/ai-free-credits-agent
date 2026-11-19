@@ -27,8 +27,9 @@ Agente para descobrir oportunidades públicas de créditos gratuitos, planos fre
 3. Copie o identificador do banco e substitua `REPLACE_WITH_D1_DATABASE_ID` em `wrangler.toml`.
 4. Execute a migração: `npx wrangler d1 execute ai-free-credits --remote --file=./schema.sql`.
 5. Faça login no Wrangler: `npx wrangler login`.
-6. Publique: `npx wrangler deploy`.
-7. Confirme em **Workers & Pages → seu Worker → Settings/Triggers** que o cron `*/30 * * * *` está ativo.
+6. Configure um token forte para proteger a coleta manual: `npx wrangler secret put ADMIN_TOKEN`.
+7. Publique: `npx wrangler deploy`.
+8. Confirme em **Workers & Pages → seu Worker → Settings/Triggers** que o cron `*/30 * * * *` está ativo.
 
 ## Endpoints
 
@@ -39,7 +40,7 @@ Agente para descobrir oportunidades públicas de créditos gratuitos, planos fre
 - `GET /runs`: últimas execuções.
 - `POST /scan`: executar uma coleta manual.
 
-Os endpoints são públicos por padrão neste MVP. Antes de compartilhar a URL do Worker, recomenda-se adicionar autenticação ao endpoint de coleta manual e limitar CORS conforme o painel que será conectado.
+Os endpoints de consulta são públicos neste MVP. A coleta manual `POST /scan` exige `Authorization: Bearer SEU_ADMIN_TOKEN`; configure o segredo `ADMIN_TOKEN` antes de publicar. Restrinja CORS quando conectar um painel.
 
 ## Limitações importantes
 

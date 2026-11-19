@@ -124,6 +124,9 @@ export default {
       return json({ runs: result.results });
     }
     if (url.pathname === "/scan" && request.method === "POST") {
+      if (!env.ADMIN_TOKEN || request.headers.get("authorization") !== "Bearer " + env.ADMIN_TOKEN) {
+        return json({ error: "Unauthorized" }, 401);
+      }
       return json(await scan(env));
     }
     return json({ service: "AI Free Credits Agent", endpoints: ["/health", "/offers", "/runs"], manualScan: "POST /scan" });

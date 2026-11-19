@@ -8,7 +8,7 @@ crons = ["*/30 * * * *"]
 [[d1_databases]]
 binding = "DB"
 database_name = "ai-free-credits"
-database_id = "REPLACE_WITH_D1_DATABASE_ID"
+database_id = "2d00d1c5-7e67-4225-8cbe-20e4478d3ed7"
 
 [vars]
 MAX_ITEMS_PER_FEED = "30"

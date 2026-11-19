@@ -7,7 +7,7 @@ const FEEDS = [
 const TERMS = [
   "free credits", "free tier", "free plan", "free trial", "startup credits",
   "api credits", "cloud credits", "free tokens", "no-cost", "free access",
-  "เครดิตฟรี", "เครดิตฟรี" 
+  "free usage", "free tokens available"
 ];
 
 const CATEGORY_RULES = [

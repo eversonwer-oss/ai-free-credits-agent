@@ -1,0 +1,11 @@
+# Remote Cloudflare runtime homologation only. Never use for Production.
+name = "ai-free-credits-agent-cpu-homologation"
+main = "test/cloudflare-homologation.js"
+compatibility_date = "2026-11-19"
+workers_dev = true
+
+[[d1_databases]]
+binding = "DB"
+database_name = "ai-free-credits-cpu-homologation"
+database_id = "a7b8e516-d2d8-4bef-b16f-cd8e5d5bdea6"
+migrations_dir = "migrations"

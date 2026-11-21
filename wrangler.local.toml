@@ -1,0 +1,14 @@
+# Isolated local-only configuration. Never use this file for deployment.
+name = "ai-free-credits-agent-homologation"
+main = "test/local-worker.js"
+compatibility_date = "2026-11-19"
+workers_dev = false
+
+[build]
+command = "node scripts/local-wrangler-guard.js"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "ai-free-credits-local"
+database_id = "00000000-0000-0000-0000-000000000001"
+migrations_dir = "migrations"

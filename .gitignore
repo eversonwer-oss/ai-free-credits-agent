@@ -2,3 +2,7 @@
 .wrangler/
 node_modules/
 .env
+
+# Local environment and generated work files
+.env.local
+work/
